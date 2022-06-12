@@ -1,0 +1,152 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+.controls {
+  z-index: 3;
+  padding: 50px;
+  width: 200px;
+  background-color: #0f0f0f;
+  /* border-right: white solid 1px; */
+}
+
+.range {
+  width: 100%;
+  border-radius: 5px;
+  background-color: #333333;
+  color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.nodes {
+  width: 100%;
+  min-height: 100px;
+  max-height: 100%;
+  border-radius: 10px;
+  background-color: white;
+  /* overflow-y: scroll; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 4px;
+  gap: 2px;
+}
+
+.node {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #1d1d1d;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.num {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  width: 90%;
+  color: white;
+  display: flex;
+  text-align: center;
+  background-color: transparent;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.add_card {
+  background-color: #0f0f0f;
+}
+
+.add_card > h2 {
+  color: white;
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.label {
+  position: absolute;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 100px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0px;
+  height: 0px;
+  z-index: 2;
+  transform-origin: center;
+  transition-property: width, height, transform;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0, 1.85, 0.8, 1),
+    cubic-bezier(0, 1.85, 0.8, 1), ease-in;
+}
+
+.label:nth-child(1) {
+  margin: 0;
+}
+
+.line {
+  position: absolute;
+  z-index: 0;
+  width: 2px;
+  height: 0px;
+  background-color: white;
+  transform-origin: top;
+  border-radius: 10px;
+  transition: all 0.3s ease-in;
+  display: flex;
+  align-items:flex-end ;
+  justify-content: center;
+}
