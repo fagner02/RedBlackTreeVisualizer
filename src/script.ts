@@ -128,7 +128,7 @@ function turnBlack(z: number): number {
 }
 
 function setRootParent(z: number, parent: number, child: number): number {
-  if (!parent) {
+  if (parent == null) {
     treeArray[z].root = false;
     treeArray[child].root = true;
     treeArray[child].parent = null;
@@ -144,7 +144,7 @@ function setRootParent(z: number, parent: number, child: number): number {
 
 function setParent(parent: number, branch: string, child: number) {
   treeArray[parent][branch] = child;
-  if (!(child == null)) {
+  if (child != null) {
     treeArray[child].parent = parent;
   }
 }
@@ -156,7 +156,7 @@ function restructureTree(x: number): number {
   const z: number = treeArray[y]?.parent;
   const parent: number = treeArray[z]?.parent;
 
-  if (y == null || y == undefined || z == null || z == undefined) {
+  if (y == null || z == null) {
     return root;
   }
 
