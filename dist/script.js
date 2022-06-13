@@ -104,7 +104,7 @@ function turnBlack(z) {
     return z;
 }
 function setRootParent(z, parent, child) {
-    if (!parent) {
+    if (parent == null) {
         treeArray[z].root = false;
         treeArray[child].root = true;
         treeArray[child].parent = null;
@@ -120,7 +120,7 @@ function setRootParent(z, parent, child) {
 }
 function setParent(parent, branch, child) {
     treeArray[parent][branch] = child;
-    if (!(child == null)) {
+    if (child != null) {
         treeArray[child].parent = parent;
     }
 }
@@ -129,7 +129,7 @@ function restructureTree(x) {
     const y = treeArray[x]?.parent;
     const z = treeArray[y]?.parent;
     const parent = treeArray[z]?.parent;
-    if (y == null || y == undefined || z == null || z == undefined) {
+    if (y == null || z == null) {
         return root;
     }
     if (treeArray[y].color != "r") {
